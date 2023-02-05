@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+// import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 const path = require('path')
+const fs = require('fs');
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve:{
     alias:{
@@ -12,5 +13,13 @@ export default defineConfig({
       '@pages' : path.resolve(__dirname, './src/pages')
     },
   },
-  plugins: [react()],
+  plugins: [
+    // createSvgIconsPlugin({
+    //   // Specify the icon folder to be cached
+    //   iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+    //   // Specify symbolId format
+    //   symbolId: 'icon-[dir]-[name]',
+    // }),
+    react()
+  ],
 })
