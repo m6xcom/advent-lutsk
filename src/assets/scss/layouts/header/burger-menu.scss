@@ -21,6 +21,9 @@
                 }
             }
         }
+        .burger-modal{
+            left: calc(100% - 245px);
+        }
     }
     &__button{
         position: relative;
@@ -66,5 +69,15 @@
         transition-duration: .3s;
         opacity: 0;
         visibility: hidden;
+    }
+    .burger-modal{
+        position: absolute;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 245px;
+        background: $light-pink;
+        transition: .3s;
+        z-index: 2;
     }
 }

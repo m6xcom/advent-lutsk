@@ -6,6 +6,9 @@ function BurgerMenu({parentClass, isOpen, toggleModal}){
         <button className="burger-menu__button" onClick={toggleModal} type="button">
             <span className="burger-menu__button-line"></span>
         </button>
+        <div className="burger-menu__modal burger-modal">
+            
+        </div>
         <div className="burger-menu__overlay" onClick={toggleModal}></div>
     </div>
     )
