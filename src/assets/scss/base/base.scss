@@ -1,0 +1,79 @@
+html {
+    overflow-x: hidden;
+}
+
+html, body {
+    min-height: 100vh;
+    overflow-anchor: none;
+    scroll-behavior: smooth;
+    &.fixing {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+body,
+button,
+textarea,
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+input, textarea{
+    &::placeholder{
+        transition-duration: .3s;
+    }
+    &:focus{
+        &::placeholder{
+            color: transparent !important;
+        }
+    }
+}
+
+a{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    flex: 1 0 auto;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

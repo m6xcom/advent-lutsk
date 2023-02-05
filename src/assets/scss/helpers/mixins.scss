@@ -1,0 +1,54 @@
+@mixin column($count, $margin) {
+    width: col($count, $margin);
+    &:nth-child(n) {
+        margin-right: $margin;
+    }
+    &:nth-child(#{$count}n) {
+        margin-right: 0;
+    }
+}
+
+@mixin widthGap($count, $gap){
+    gap: #{$gap};
+    &>*{
+        width: calc(100% / #{$count} - ((#{$gap} * (#{$count} - 1)) / #{$count}));
+    }
+}
+
+@mixin squareGap($count, $gap){
+    gap: #{$gap};
+    &>*{
+        position: relative;
+        width: calc(100% / #{$count} - ((#{$gap} * (#{$count} - 1)) / #{$count}));
+        height: 0;
+        padding-bottom: calc(100% / #{$count} - ((#{$gap} * (#{$count} - 1)) / #{$count}));
+    }
+}
+
+@function w($width, $window) {
+    @return ($width * 100vw) / $window;
+}
+
+@function col($count, $margin) {
+    @return calc(100% / #{$count} - ((#{$margin} * #{$count}) - #{$margin}) / #{$count});
+}
+
+@mixin min($width) {
+    @media screen and (min-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin max($width) {
+    @media screen and (max-width: #{$width}) {
+        @content;
+    }
+}
+
+@mixin scrollbar($thumb: #eee, $aria:#f9f9f9, $track: #fff) {
+    scrollbar-color: $thumb $aria;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar { width: 5px; height: 5px; }
+    &::-webkit-scrollbar-thumb { background-color: $thumb; border-radius: 5px; }
+    &::-webkit-scrollbar-button { height: 0; }
+}
