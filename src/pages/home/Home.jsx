@@ -1,4 +1,4 @@
-import '@scss/pages/home/index.module.scss'
+import '@scss/pages/home/index.scss'
 
 function Home(){
     return(

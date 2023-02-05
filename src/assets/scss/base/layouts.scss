@@ -23,7 +23,7 @@
         max-width: 990px;
     }
 }
-
+ 
 @include min(1200px) {
     .container {
         max-width: 1150px;
