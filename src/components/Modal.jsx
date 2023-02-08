@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Modal(WrappedComponent){
+function Modal(Component){
     return (props) =>{
         const [isOpen, setIsOpen] = useState(false);
 
@@ -9,7 +9,7 @@ function Modal(WrappedComponent){
         };
 
         return(
-            <WrappedComponent {...props} isOpen={isOpen} toggleModal={toggleModal}/>
+            <Component {...props} isOpen={isOpen} toggleModal={toggleModal}/>
         )
     }
 }

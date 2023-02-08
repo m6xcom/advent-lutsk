@@ -1,4 +1,6 @@
-import Modal from "@components/Modal";
+import Modal from "./Modal";
+import CreateBoxButton from "./CreateBoxButton";
+import Navigation from "./Navigation";
 
 function BurgerMenu({parentClass, isOpen, toggleModal}){
     return(
@@ -7,7 +9,8 @@ function BurgerMenu({parentClass, isOpen, toggleModal}){
             <span className="burger-menu__button-line"></span>
         </button>
         <div className="burger-menu__modal burger-modal">
-            
+            <CreateBoxButton parentClass="burger-modal__button"/>
+            <Navigation parentClass="burger-modal__navigation"/>
         </div>
         <div className="burger-menu__overlay" onClick={toggleModal}></div>
     </div>

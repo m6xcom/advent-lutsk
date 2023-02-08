@@ -1,4 +1,4 @@
-import BurgerMenu from '@components/BurgerMenu'
+import BurgerMenu from './BurgerMenu'
 import logo from '@img/logo.png'
 
 function Header(){
