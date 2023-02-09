@@ -36,7 +36,7 @@
         &-line{
             position: relative;
             transition-timing-function: cubic-bezier(.55,.055,.675,.19);
-            transition-duration: .22s;
+            transition-duration: .3s;
             &,&::before, &::after{
                 display: inline-block;
                 height: 2px;
@@ -84,6 +84,12 @@
         transition: .3s;
         z-index: 2;
         &__button{
+            margin-bottom: 30px;
+        }
+        &__navigation{
+            margin-bottom: 110px;
+        }
+        &__socials{
             margin-bottom: 30px;
         }
     }

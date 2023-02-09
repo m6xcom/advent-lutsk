@@ -1,0 +1,14 @@
+.socials-list{
+    display: flex;
+    &__item{
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+    }
+    &__link{
+      display: flex;
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+    }
+}

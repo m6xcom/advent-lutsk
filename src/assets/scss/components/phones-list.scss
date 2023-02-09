@@ -1,0 +1,15 @@
+.phones-list{
+  display: flex;
+  flex-direction: column;
+  &__item{
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+  &__link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000;
+  }
+}
