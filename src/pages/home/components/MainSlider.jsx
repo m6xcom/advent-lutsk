@@ -21,7 +21,7 @@ function MainSlider({parentClass}){
     ]
     return(
         <section className={ parentClass + ' main-slider' }>
-            <Swiper modules={[EffectFade]} slidesPerView={1}>
+            <Swiper modules={[EffectFade]} slidesPerView={1} effect="fade">
                 { slides.map(el=>{
                     return (
                         <SwiperSlide>
