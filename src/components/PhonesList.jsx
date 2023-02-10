@@ -7,9 +7,9 @@ function PhonesList({parentClass}){
     ]
     return (
         <ul className={ parentClass + ' phones-list' }>
-            { phones.map(el =>{
+            { phones.map((el, index) =>{
                 return (
-                    <li className="phones-list__item">
+                    <li key={index} className="phones-list__item">
                         <a className="phones-list__link" href={"tel:" + el.link}>
                             { el.phone }
                         </a>

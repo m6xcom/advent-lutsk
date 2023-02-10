@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 40px);
+    width: calc(100% - 65px);
     transform: translate(-50%, -50%);
     z-index: 2;
   }
@@ -76,5 +76,25 @@
     opacity: 0;
     visibility: hidden;
     transition-duration: .6s;
+  }
+  &__controll-button{
+    &.swiper-button-disabled{
+      opacity: 0.5;
+      .main-slider__controll-button-icon{
+        fill: #D6D6D6;
+      }
+    }
+    &.swiper-button-next{
+      .main-slider__controll-button-icon{
+        transform: rotate(180deg);
+      }
+    }
+    &:after{
+      display: none;
+    }
+  }
+  &__controll-button-icon{
+    fill: $dark-pink;
+    transition-duration: .3s;
   }
 }

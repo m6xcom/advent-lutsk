@@ -14,9 +14,9 @@ function SocialsList({parentClass}){
     ]
     return (
         <ul className={ parentClass + ' socials-list' }>
-            { socials.map(el =>{
+            { socials.map((el, index) =>{
                 return (
-                    <li className="socials-list__item">
+                    <li key={index} className="socials-list__item">
                         <a className="socials-list__link" href={el.link}>
                             <svg className="socials-list__icon">
                                 <use xlinkHref={`#${el.icon}`}></use>
