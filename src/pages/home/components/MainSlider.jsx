@@ -11,6 +11,12 @@ function MainSlider({parentClass}){
             'title': 'Подарунок на день закоханих',
             'button': true,
             'buttonText': 'Обирай свій'
+        },
+        {
+            'img': '/img/slides/slide1.png',
+            'title': 'Цекут працівник року',
+            'button': true,
+            'buttonText': 'Обирай свого'
         }
     ]
     return(
