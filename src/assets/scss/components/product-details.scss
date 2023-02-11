@@ -1,0 +1,128 @@
+.product-details{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    overflow: auto;
+    transition-duration: .3s;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+    &__header{
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 3;
+    }
+    &__header,&__middle{
+        border-bottom: 1px solid rgb(219, 219, 219);
+    }
+    &__header-container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 44px;
+    }
+    &__close-button{
+        width: 25px;
+        height: 25px;
+    }
+    &__company-title{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+    }
+    &__follow-button{
+        margin-left: auto;
+        font-size: 12px;
+        line-height: 1.2;
+        color: #0095f6;
+    }
+    &__middle-container{
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+    &__logo-link{
+        display: flex;
+        align-items: center;
+    }
+    &__logo{
+        width: 42px;
+        height: 42px;
+        margin-right: 5px;
+    }
+    &__logo-name{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    &__slider{
+        position: relative;
+        margin-bottom: 10px;
+    }
+    &__slide-picture{
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+    }
+    &__slide-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    &__slider-counter{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        border-radius: 10px;
+        padding: 5px 7px;
+        font-size: 12px;
+        color: #fff;
+        z-index: 2;
+    }
+    &__tools{
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    &__tool-button{
+        width: 25px;
+        height: 25px;
+        margin-left: 15px;
+        &:first-child{
+            margin-left: 0;
+        }
+        &--right{
+            margin-left: auto;
+        }
+    }
+    &__likes{
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.2;
+    }
+    &__description{
+        font-size: 14px;
+        line-height: 1.2;
+        &--bold{
+            font-weight: 600;
+        }
+    }
+}

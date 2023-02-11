@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState , useRef } from 'react';
 
 function Modal(Component){
     return (props) =>{
         const [isOpen, setIsOpen] = useState(false);
+        const modalRef = useRef();
 
         const toggleModal = () =>{
-            setIsOpen(!isOpen);
+            setIsOpen(!modalRef.current.classList.contains('active'));
         };
 
         return(
-            <Component {...props} isOpen={isOpen} toggleModal={toggleModal}/>
+            <Component {...props} modalRef={modalRef} isOpen={isOpen} toggleModal={toggleModal}/>
         )
     }
 }

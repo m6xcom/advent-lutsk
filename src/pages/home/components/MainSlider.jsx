@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade , Navigation } from 'swiper';
+import { EffectFade , Navigation, Autoplay } from 'swiper';
 
 import arrow from "@icons/arrow.svg";
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 function MainSlider({parentClass}){
     const prevButtonRef = useRef();
@@ -28,7 +29,11 @@ function MainSlider({parentClass}){
     ]
     return(
         <section className={ parentClass + ' main-slider' }>
-            <Swiper modules={[EffectFade, Navigation]} navigation={{
+            <Swiper modules={[EffectFade, Navigation, Autoplay]}
+                autoplay={{
+                    delay: 4000,
+                }}
+                navigation={{
                     nextEl: nextButtonRef.current,
                     prevEl: prevButtonRef.current,
                 }}
@@ -39,9 +44,9 @@ function MainSlider({parentClass}){
                     swiper.navigation.update();
                 }}
                 slidesPerView={1} effect="fade">
-                { slides.map(el=>{
+                { slides.map((el, index)=>{
                     return (
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             <div className="main-slider__slide">
                                 <picture className="main-slider__picture">
                                     <img className="main-slider__img" src={el.img} alt={el.title}/>

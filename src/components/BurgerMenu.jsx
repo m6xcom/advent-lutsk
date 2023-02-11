@@ -4,9 +4,9 @@ import Navigation from "./Navigation";
 import SocialsList from "./SocialsList";
 import PhonesList from "./PhonesList";
 
-function BurgerMenu({parentClass, isOpen, toggleModal}){
+function BurgerMenu({parentClass, modalRef ,isOpen, toggleModal}){
     return(
-    <div className={parentClass + " burger-menu" + `${isOpen ? ' active' : ''}`}>
+    <div ref={modalRef} className={parentClass + " burger-menu" + `${isOpen ? ' active' : ''}`}>
         <button className="burger-menu__button" onClick={toggleModal} type="button">
             <span className="burger-menu__button-line"></span>
         </button>
