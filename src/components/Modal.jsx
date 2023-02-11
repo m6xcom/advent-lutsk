@@ -7,6 +7,8 @@ function Modal(Component){
 
         const toggleModal = () =>{
             setIsOpen(!modalRef.current.classList.contains('active'));
+            const html = document.querySelector('html');
+            isOpen ? html.classList.remove("fixing") : html.classList.add("fixing");
         };
 
         return(
