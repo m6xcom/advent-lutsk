@@ -65,6 +65,7 @@ export default function ProductDetails({parentClass, modalRef ,isOpen, toggleMod
                         const nextVideo = swiper.slides[swiper.activeIndex].querySelector('video');
                         if(nextVideo){
                             nextVideo.currentTime = 0;
+                            nextVideo.play();
                         }
                     }} slidesPerView={1}>
                     {mediaFiles.map((el,index)=>{
@@ -75,7 +76,7 @@ export default function ProductDetails({parentClass, modalRef ,isOpen, toggleMod
                                     <img className="product-details__slide-img" src={`/img/products/` + el.src} alt={"Ведмідь в носках, фото " + `${index + 1}`} />
                                 </picture>
                                 : el.type === 'video' ? 
-                                    <ReactPlayer playing={true} className="product-details__slide-video" muted={true} controls={true} url={`/img/products/` + el.src}/>
+                                    <ReactPlayer playsinline={true} playing={true} className="product-details__slide-video" muted={true} controls={true} url={`/img/products/` + el.src}/>
                                 : ''
                             }
                         </SwiperSlide>)
