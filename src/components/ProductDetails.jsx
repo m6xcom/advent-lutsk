@@ -1,4 +1,5 @@
-import { useRef , useState} from "react";
+import React, { useRef , useState} from "react";
+import ReactPlayer from 'react-player'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
 
@@ -23,8 +24,8 @@ export default function ProductDetails({parentClass, modalRef ,isOpen, toggleMod
             type: 'image'
         },
         {
-            src: 'product1.png',
-            type: 'image'
+            src: 'video.mp4',
+            type: 'video'
         }
     ]
   return (
@@ -55,13 +56,28 @@ export default function ProductDetails({parentClass, modalRef ,isOpen, toggleMod
             </div>
             <div className="product-details__slider">
                 { mediaFiles.length > 0 ? <span className="product-details__slider-counter">{currentSlide}/{mediaFiles.length}</span> : ''}
-                <Swiper onSlideChange={(swiper)=>setCurrentSlide(swiper.activeIndex + 1)} slidesPerView={1}>
+                <Swiper onSlideChange={(swiper)=>{
+                        const prevVideo = swiper.slides[currentSlide - 1].querySelector('video');
+                        if(prevVideo){
+                            prevVideo.pause();
+                        }
+                        setCurrentSlide(swiper.activeIndex + 1);
+                        const nextVideo = swiper.slides[swiper.activeIndex].querySelector('video');
+                        if(nextVideo){
+                            nextVideo.currentTime = 0;
+                        }
+                    }} slidesPerView={1}>
                     {mediaFiles.map((el,index)=>{
                         return (
                         <SwiperSlide key={index}>
-                            <picture className="product-details__slide-picture">
-                                <img className="product-details__slide-img" src={`/img/products/` + el.src} alt={"Ведмідь в носках, фото " + `${index + 1}`} />
-                            </picture>
+                            {el.type === 'image' ?
+                                <picture className="product-details__slide-picture">
+                                    <img className="product-details__slide-img" src={`/img/products/` + el.src} alt={"Ведмідь в носках, фото " + `${index + 1}`} />
+                                </picture>
+                                : el.type === 'video' ? 
+                                    <ReactPlayer playing={true} className="product-details__slide-video" muted={true} controls={true} url={`/img/products/` + el.src}/>
+                                : ''
+                            }
                         </SwiperSlide>)
                     })}
                 </Swiper>
